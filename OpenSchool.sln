@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31512.422
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSchool.Web.Api", "OpenSchool.Web.Api\OpenSchool.Web.Api.csproj", "{75681AE8-8DF4-446E-912B-413A9C9DF565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSchool.Web.Api", "OpenSchool.Web.Api\OpenSchool.Web.Api.csproj", "{75681AE8-8DF4-446E-912B-413A9C9DF565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSchool.Web.Tests.Unit", "OpenSchool.Web.Tests.Unit\OpenSchool.Web.Tests.Unit.csproj", "{1A50CE3D-119C-48AB-9253-4267C6A5288D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{75681AE8-8DF4-446E-912B-413A9C9DF565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75681AE8-8DF4-446E-912B-413A9C9DF565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75681AE8-8DF4-446E-912B-413A9C9DF565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A50CE3D-119C-48AB-9253-4267C6A5288D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A50CE3D-119C-48AB-9253-4267C6A5288D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A50CE3D-119C-48AB-9253-4267C6A5288D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A50CE3D-119C-48AB-9253-4267C6A5288D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
