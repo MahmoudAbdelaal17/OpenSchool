@@ -3,7 +3,7 @@ using OpenSchool.Web.Api.Brokers.Loggings;
 
 namespace OpenSchool.Web.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -15,10 +15,6 @@ namespace OpenSchool.Web.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult index()
-        {
-            logger.LogInfo("Welcome From Logger");
-            return Ok();
-        }
+        public IActionResult Get() => Ok("Hello !");
     }
 }
