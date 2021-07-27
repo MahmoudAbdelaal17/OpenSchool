@@ -2,7 +2,7 @@
 
 namespace OpenSchool.Web.Api.Brokers.Loggings
 {
-    public class LoggerManager : ILoggerManager
+    public class LoggingBroker : ILoggingBroker
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
         public void LogDebug(string message)

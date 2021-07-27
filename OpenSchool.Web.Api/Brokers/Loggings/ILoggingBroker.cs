@@ -1,6 +1,6 @@
 ﻿namespace OpenSchool.Web.Api.Brokers.Loggings
 {
-    public interface ILoggerManager
+    public interface ILoggingBroker
     {
         void LogInfo(string message);
         void LogWarn(string message);

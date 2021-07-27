@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NLog;
 using OpenSchool.Web.Api.Brokers.Loggings;
-using OpenSchool.Web.Api.Brokers.StorageBroker;
+using OpenSchool.Web.Api.Brokers.Storages;
+using OpenSchool.Web.Api.Services.Foundations.Students;
 using System.IO;
 
 namespace OpenSchool.Web.Api
@@ -22,9 +23,10 @@ namespace OpenSchool.Web.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ILoggerManager, LoggerManager>();
+            services.AddScoped<ILoggingBroker, LoggingBroker>();
             services.AddDbContext<StorageBroker>();
             services.AddScoped<IStorageBroker, StorageBroker>();
+            services.AddTransient<IStudentService, StudentService>();
             services.AddControllers();
         }
 

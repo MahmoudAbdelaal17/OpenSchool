@@ -7,9 +7,9 @@ namespace OpenSchool.Web.Api.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly ILoggerManager logger;
+        private readonly ILoggingBroker logger;
 
-        public ValuesController(ILoggerManager logger)
+        public ValuesController(ILoggingBroker logger)
         {
             this.logger = logger;
         }

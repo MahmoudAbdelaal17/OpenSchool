@@ -1,7 +1,6 @@
-﻿namespace OpenSchool.Web.Api.Brokers.StorageBroker
+﻿namespace OpenSchool.Web.Api.Brokers.Storages
 {
-    public interface IStorageBroker
+    public partial interface IStorageBroker
     {
-
     }
 }
