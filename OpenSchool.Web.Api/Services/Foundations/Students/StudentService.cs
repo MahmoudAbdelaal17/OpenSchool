@@ -2,6 +2,7 @@
 using OpenSchool.Web.Api.Brokers.Storages;
 using OpenSchool.Web.Api.Models.Students;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OpenSchool.Web.Api.Services.Foundations.Students
@@ -18,12 +19,12 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
         }
         public ValueTask<Student> RegisterStudentAsync(Student student)
         {
-           
-          //  ValidateStudentOnCreate(student);
+
+            ValidateStudentId(student.Id);
 
             // return CRUD operation 
             return this.storageBroker.InsertStudentAsync(student);
         }
-
+        
     }
 }

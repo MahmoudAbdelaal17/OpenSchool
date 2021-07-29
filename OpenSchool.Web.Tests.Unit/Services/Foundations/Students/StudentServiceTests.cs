@@ -22,14 +22,13 @@ namespace OpenSchool.Web.Tests.Unit.Services.Foundations.Students
                 storageBrokerMock.Object,loggingBrokerMock.Object);
         }
 
-        private static Student CreateRandomStudent(DateTimeOffset dates) 
-            => CreateStudentFilter(dates).Create();
-
         private static DateTimeOffset GetRandomDateTime()
-        {
-            return new DateTimeRange(earliestDate:new DateTime()).GetValue();
-        }
-        private static Filler<Student> CreateStudentFilter(DateTimeOffset dates)
+            => new DateTimeRange(earliestDate:new DateTime()).GetValue();
+        
+        private static Student CreateRandomStudent(DateTimeOffset dates) 
+            => CreateStudentFiller(dates).Create();
+
+        private static Filler<Student> CreateStudentFiller(DateTimeOffset dates)
         {
             var filler = new Filler<Student>();
             Guid CreatedBy = Guid.NewGuid();

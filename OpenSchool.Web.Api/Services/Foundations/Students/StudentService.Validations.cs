@@ -1,4 +1,5 @@
 ﻿using OpenSchool.Web.Api.Models.Students;
+using OpenSchool.Web.Api.Models.Students.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,14 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
 {
     public partial class StudentService
     {
-        private static void ValidateStudentOnCreate(Student student) {
-            
+        private static void ValidateStudentId(Guid studentId)
+        {
+            if (studentId == Guid.Empty)
+            {
+                throw new InvalidStudentException(
+                    parameterName : nameof(studentId),
+                    parameterValue: studentId);
+            }
         }
     }
 }
