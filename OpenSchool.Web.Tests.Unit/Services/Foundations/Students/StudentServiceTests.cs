@@ -4,6 +4,7 @@ using OpenSchool.Web.Api.Brokers.Storages;
 using OpenSchool.Web.Api.Models.Students;
 using OpenSchool.Web.Api.Services.Foundations.Students;
 using System;
+using System.Linq.Expressions;
 using Tynamix.ObjectFiller;
 
 namespace OpenSchool.Web.Tests.Unit.Services.Foundations.Students
@@ -19,7 +20,7 @@ namespace OpenSchool.Web.Tests.Unit.Services.Foundations.Students
             this.loggingBrokerMock = new Mock<ILoggingBroker>();
 
             this.studentService = new StudentService(
-                storageBrokerMock.Object,loggingBrokerMock.Object);
+                this.storageBrokerMock.Object,this.loggingBrokerMock.Object);
         }
 
         private static DateTimeOffset GetRandomDateTime()
@@ -27,6 +28,14 @@ namespace OpenSchool.Web.Tests.Unit.Services.Foundations.Students
         
         private static Student CreateRandomStudent(DateTimeOffset dates) 
             => CreateStudentFiller(dates).Create();
+
+
+        private static Expression<Func<Exception, bool>> SameExceptionAs(Exception expectedException)
+        {
+            return actualException =>
+                expectedException.Message == actualException.Message
+                && expectedException.InnerException.Message == actualException.InnerException.Message;
+        }
 
         private static Filler<Student> CreateStudentFiller(DateTimeOffset dates)
         {

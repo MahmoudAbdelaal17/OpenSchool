@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OpenSchool.Web.Api.Models.Students.Exceptions
 {
     public class StudentValidationException : Exception
     {
         public StudentValidationException(Exception innerException)
-        : base("Invalid input , contact support .",innerException) {}
+           : base("Invalid input, contact support.", innerException) { }
 
-        
     }
 }

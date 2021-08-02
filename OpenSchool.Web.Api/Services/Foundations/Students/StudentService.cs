@@ -17,14 +17,12 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
             this.storageBroker = storageBroker;
             this.loggerBroker = loggerBroker;
         }
-        public ValueTask<Student> RegisterStudentAsync(Student student)
-        {
+        public ValueTask<Student> RegisterStudentAsync(Student student) => 
+        TryCatch(async () =>
+            {
+                ValidateStudentId(student.Id);
 
-            ValidateStudentId(student.Id);
-
-            // return CRUD operation 
-            return this.storageBroker.InsertStudentAsync(student);
-        }
-        
+                return await this.storageBroker.InsertStudentAsync(student);
+            });        
     }
 }
