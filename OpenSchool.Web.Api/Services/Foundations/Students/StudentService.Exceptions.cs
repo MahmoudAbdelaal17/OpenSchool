@@ -25,7 +25,7 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
             private StudentValidationException CreateAndLogValidationException(Exception exception)
             {
                 var studentValidationException = new StudentValidationException(exception);
-                this.loggerBroker.LogError(studentValidationException);
+                this.loggerBroker.LogError(studentValidationException.Message);
 
                 return studentValidationException;
             }
