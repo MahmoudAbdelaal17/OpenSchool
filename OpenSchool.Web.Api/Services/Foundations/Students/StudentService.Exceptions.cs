@@ -16,13 +16,22 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
             {
                 return await returningStudentFunction();
             }
+            catch (NullStudentException nullStudentException)
+            {
+                throw CreateAndLogValidationException(nullStudentException);
+            }
             catch (InvalidStudentException invalidStudentException)
             {
-
                 throw CreateAndLogValidationException(invalidStudentException);
             }
+            catch(AlreadyExistsStudentException alreadyExistStudentException)
+            {
+                throw CreateAndLogValidationException(alreadyExistStudentException);
+            }
         }
-            private StudentValidationException CreateAndLogValidationException(Exception exception)
+
+    
+        private StudentValidationException CreateAndLogValidationException(Exception exception)
             {
                 var studentValidationException = new StudentValidationException(exception);
                 this.loggerBroker.LogError(studentValidationException.Message);

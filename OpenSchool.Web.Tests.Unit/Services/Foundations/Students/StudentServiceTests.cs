@@ -29,6 +29,8 @@ namespace OpenSchool.Web.Tests.Unit.Services.Foundations.Students
         private static Student CreateRandomStudent(DateTimeOffset dates) 
             => CreateStudentFiller(dates).Create();
 
+        private static string GetRandomMessage() => new MnemonicString().GetValue();
+
 
         private static Expression<Func<Exception, bool>> SameExceptionAs(Exception expectedException)
         {

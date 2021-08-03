@@ -20,7 +20,7 @@ namespace OpenSchool.Web.Api.Services.Foundations.Students
         public ValueTask<Student> RegisterStudentAsync(Student student) => 
         TryCatch(async () =>
             {
-                ValidateStudentId(student.Id);
+                ValidateStudentOnCreate(student);
 
                 return await this.storageBroker.InsertStudentAsync(student);
             });        
