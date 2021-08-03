@@ -9,7 +9,7 @@ namespace OpenSchool.Web.Api.Controllers
     {
 
         [HttpGet]
-        public ActionResult<string> Get() => 
+        public ActionResult<string> Get() =>
             Ok("Hello From Home Controller !");
     }
 }

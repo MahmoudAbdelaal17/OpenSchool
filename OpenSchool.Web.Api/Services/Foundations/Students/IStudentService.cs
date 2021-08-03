@@ -1,6 +1,5 @@
-﻿using System.Linq;
+﻿using OpenSchool.Web.Api.Models.Students;
 using System.Threading.Tasks;
-using OpenSchool.Web.Api.Models.Students;
 namespace OpenSchool.Web.Api.Services.Foundations.Students
 {
     public interface IStudentService

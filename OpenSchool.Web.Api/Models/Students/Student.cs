@@ -10,9 +10,9 @@ namespace OpenSchool.Web.Api.Models.Students
         public string LastName { get; set; }
         public DateTimeOffset BirthDate { get; set; }
         public Gender Gender { get; set; }
-        public DateTimeOffset CreatedDate { get ; set; }
-        public DateTimeOffset UpdatedDate { get ; set ; }
-        public Guid CreatedBy { get ; set ; }
-        public Guid UpdatedBy { get ; set ; }
+        public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset UpdatedDate { get; set; }
+        public Guid CreatedBy { get; set; }
+        public Guid UpdatedBy { get; set; }
     }
 }

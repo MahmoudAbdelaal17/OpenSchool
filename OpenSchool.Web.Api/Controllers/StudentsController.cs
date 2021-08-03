@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OpenSchool.Web.Api.Models.Students;
 using OpenSchool.Web.Api.Models.Students.Exceptions;
 using OpenSchool.Web.Api.Services.Foundations.Students;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OpenSchool.Web.Api.Controllers
 {
@@ -25,8 +20,9 @@ namespace OpenSchool.Web.Api.Controllers
         {
             try
             {
-              studentService.RegisterStudentAsync(student);
-            } catch(InvalidStudentException ex )
+                studentService.RegisterStudentAsync(student);
+            }
+            catch (InvalidStudentException ex)
             {
                 return BadRequest(ex.Message);
             }
